@@ -19,7 +19,7 @@ Route::get('/', function () {
 
 Route::group(['as' => 'admin::', 'namespace' => 'Admin', 'prefix' => 'admin'], function () {
     Route::group(['namespace' => 'Auth'], function () {
-        Route::get('sing-in', 'AdminSignInController')->name('sign-in');
-        Route::post('sing-in', 'AdminSignInController')->name('sign-in');
+        Route::get('sign-in', 'AdminSignInController')->name('sign-in');
+        Route::post('sign-in', 'AdminAuthController')->name('sign-in');
     });
 });

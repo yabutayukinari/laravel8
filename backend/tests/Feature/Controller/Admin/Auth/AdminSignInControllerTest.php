@@ -4,16 +4,14 @@ namespace Tests\Feature\Controller\Admin\Auth;
 
 use Tests\TestCase;
 
-class AdminLoginControllerTest extends TestCase
+class AdminSignInControllerTest extends TestCase
 {
     /**
-     * A basic feature test example.
      *
-     * @return void
      */
     public function test()
     {
-        $response = $this->get('/admin/login');
+        $response = $this->get('/admin/sign-in');
 
         $response->assertStatus(200);
     }
