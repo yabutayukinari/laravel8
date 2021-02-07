@@ -129,6 +129,6 @@ ide-helper:
 	docker-compose exec app php artisan ide-helper:meta
 	docker-compose exec app php artisan ide-helper:models --nowrite
 dry-cs:
-    docker-compose run cs fix --dry-run -v --diff --diff-format udiff .
+	docker-compose run cs fix --dry-run -v --diff --diff-format udiff .
 fix-cs:
-    docker-compose run cs fix -v --diff --diff-format udiff .
+	docker-compose run cs fix -v --diff --diff-format udiff .
