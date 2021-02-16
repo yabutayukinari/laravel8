@@ -1,0 +1,23 @@
+<?php declare(strict_types=1);
+
+return PhpCsFixer\Config::create()
+    ->setRiskyAllowed(true)
+    ->setRules([
+        '@PSR2' => true,
+    ])
+    ->setFinder(PhpCsFixer\Finder::create()
+        ->exclude([
+            'bootstrap',
+            'database/migrations',
+            'public',
+            'resources/views',
+            'storage',
+            'vendor',
+            '.phpstorm.meta.php',
+            '_ide_helper.php',
+            '_ide_helper_models.php',
+            'server.php',
+        ])->in(__DIR__)
+    );
+
+
