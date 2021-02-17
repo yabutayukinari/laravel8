@@ -14,10 +14,14 @@ jobs:
         with:
           php-version: 7.3
       - name: "composer setup"
+        working-directory: ./backend
         run: composer self-update
       - name: "composer install"
+        working-directory: ./backend
         run: composer install
       - name: "check coding standards"
+        working-directory: ./backend
         run: composer cs
       - name: "run tests"
+        working-directory: ./backend
         run: composer test
