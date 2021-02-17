@@ -1,0 +1,23 @@
+name: test
+
+on:
+  push:
+
+jobs:
+  run-test:
+    if: "!contains(github.event.head_commit.message, '[ci skip]')"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2 #https://github.com/shivammathur/setup-php
+        with:
+          php-version: 7.3
+      - name: "composer setup"
+        run: composer self-update
+      - name: "composer install"
+        run: composer install
+      - name: "check coding standards"
+        run: composer cs
+      - name: "run tests"
+        run: composer test
