@@ -26,6 +26,9 @@ jobs:
       - name: Copy .env
         run: docker-compose exec -T app php -r "copy('.env.example', '.env');"
 
+      - name: Install Dependencies
+        run: docker-compose exec -T app composer install --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
+
       - name: Generate key
         run: docker-compose exec -T app php artisan key:generate
 
